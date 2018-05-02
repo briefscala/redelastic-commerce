@@ -44,7 +44,7 @@ class KtCartController @Inject constructor(
             if (prodId.isNotEmpty()) {
                 List.of(CartItem(
                     UUID.fromString(it.get("productId").asText()),
-                    it.get("quantity").asInt(),
+                    it.get("quantity").asInt(), // this is idiomatic jackson where a default is provided
                     it.get("price").asDouble()
                 ))
             } else List.empty()
